@@ -12,7 +12,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
-    private String name_product;
+    private String name;
     private String description;
     private double price;
 
@@ -25,11 +25,11 @@ public class Product {
     }
 
     public String getName_product() {
-        return this.name_product;
+        return this.name;
     }
 
     public void setName_product(String name_product) {
-        this.name_product = name_product;
+        this.name = name_product;
     }
 
     public String getDescription() {

@@ -1,5 +1,7 @@
 package com.example.demousers.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demousers.Repositoy.ProductRepository;
 import com.example.demousers.Service.ProductService;
 import com.example.demousers.User.Product;
@@ -27,18 +28,12 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("/add")
-    public ResponseEntity<String> addNewProduct(@RequestParam String nameProduct,
-                                               @RequestParam String description,
-                                               @RequestParam double price) {
+    public ResponseEntity<String> addNewProducts(@RequestBody List<Product> products) {
         try {
-            Product product = new Product();
-            product.setName_product(nameProduct);
-            product.setDescription(description);
-            product.setPrice(price);
-            productRepository.save(product);
+            productRepository.saveAll(products);
             return new ResponseEntity<>("Saved", HttpStatus.CREATED);
         } catch (Exception e) {
-            return new ResponseEntity<>("Error saving product", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Error saving products", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -50,7 +45,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id,
-                                                 @RequestBody Product updateProduct) {
+            @RequestBody Product updateProduct) {
         Product product = productService.updateProduct(id, updateProduct);
         if (product == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
