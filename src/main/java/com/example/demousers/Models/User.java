@@ -1,4 +1,4 @@
-package com.example.demousers.User;
+package com.example.demousers.Models;
 
 import java.util.Collection;
 import java.util.List;
@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -60,4 +59,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

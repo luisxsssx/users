@@ -3,8 +3,9 @@ package com.example.demousers.Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.example.demousers.Models.Product;
 import com.example.demousers.Repositoy.ProductRepository;
-import com.example.demousers.User.Product;
+
 import jakarta.transaction.Transactional;
 
 @Transactional
@@ -33,7 +34,7 @@ public class ProductService {
 
         System.out.println("Before Update: " + product);
 
-        product.setName_product(updateProduct.getName_product());
+        product.setName(updateProduct.getName());
         product.setDescription(updateProduct.getDescription());
         product.setPrice(updateProduct.getPrice());
 

@@ -29,8 +29,9 @@ public class SecurityConfig {
                                 .authorizeHttpRequests(authRequest -> authRequest
                                                 .requestMatchers("/auth/**").permitAll()
                                                 .requestMatchers("/products/**").permitAll()
+                                                .requestMatchers("/customers/**").permitAll()
                                                 .anyRequest().authenticated())
-                                .formLogin(withDefaults())
+                                // .formLogin(withDefaults())
                                 .sessionManagement(sessionManager -> sessionManager
                                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                                 .authenticationProvider(authProvider)

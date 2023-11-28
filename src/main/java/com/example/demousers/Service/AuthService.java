@@ -1,13 +1,17 @@
-package com.example.demousers.Auth;
+package com.example.demousers.Service;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.example.demousers.User.Role;
-import com.example.demousers.User.User;
-import com.example.demousers.User.UserRepository;
+
+import com.example.demousers.Auth.AuthResponse;
+import com.example.demousers.Auth.LoginRequest;
+import com.example.demousers.Auth.RegisterRequest;
+import com.example.demousers.Models.Role;
+import com.example.demousers.Models.User;
+import com.example.demousers.Repositoy.UserRepository;
 import com.example.demousers.jwt.JwtService;
 
 import lombok.RequiredArgsConstructor;

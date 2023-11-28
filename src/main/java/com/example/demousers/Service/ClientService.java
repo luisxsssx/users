@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.demousers.Models.Client;
 import com.example.demousers.Repositoy.ClientRepository;
-import com.example.demousers.User.Client;
+
 import jakarta.transaction.Transactional;
 
 @Transactional

@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demousers.Models.Product;
 import com.example.demousers.Repositoy.ProductRepository;
 import com.example.demousers.Service.ProductService;
-import com.example.demousers.User.Product;
 
 @Controller
 @RequestMapping("/products")
