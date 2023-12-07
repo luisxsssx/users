@@ -5,12 +5,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.demousers.Auth.AuthResponse;
 import com.example.demousers.Auth.LoginRequest;
 import com.example.demousers.Auth.RegisterRequest;
 import com.example.demousers.Service.AuthService;
-
 import lombok.RequiredArgsConstructor;
 
 @RestController

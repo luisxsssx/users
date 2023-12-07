@@ -21,6 +21,7 @@ public class DemoUsersApplication {
 				registry.addMapping("/**")
 						.allowedOrigins("http://localhost:5173") // Reemplaza con la URL de tu frontend
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Agrega OPTIONS
+						
 						.allowedHeaders("*")
 						.allowCredentials(true) // Habilita las credenciales
 						.maxAge(3600); // Controla el tiempo de caché de las opciones preflight
